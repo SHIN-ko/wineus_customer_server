@@ -2,6 +2,11 @@
   "name": "blog-backend",
   "version": "1.0.0",
   "main": "index.js",
+  "engine" : {
+    "node" : "12.18.3",
+    "npm" : "6.14.6",
+    "yarn" : "1.22.4"
+  },
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -23,6 +28,7 @@
   },
   "scripts": {
     "start": "node -r esm src",
-    "start:dev": "nodemon --watch src/ -r esm src/index.js"
+    "start:dev": "nodemon --watch src/ -r esm src/index.js",
+    "heroku-postbuild" : "npm install --prefix blog-frontend && npm run build"
   }
 }
